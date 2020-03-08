@@ -1,0 +1,94 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 0a13c5209564c31dab4450870972f7834707be93a5165b551090f43a57525bf6
+
+name:           KOAK
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/KOAK#readme>
+homepage:       https://github.com/githubuser/KOAK#readme
+bug-reports:    https://github.com/githubuser/KOAK/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2019 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/KOAK
+
+library
+  exposed-modules:
+      Lib
+      LlvmInstruction
+      Syntax
+      TokenLexer
+      ToolsLLVM
+      Linker
+  other-modules:
+      Paths_KOAK
+  hs-source-dirs:
+      src
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -XLambdaCase
+  build-depends:
+      base >=4.7 && <5
+    , bytestring >=0.10.8.2
+    , containers >=0.5.0.0
+    , llvm-hs >=5.0
+    , llvm-hs-pure >=5.0
+    , mtl >=2.2.2
+    , parsec >=3.1.13.0
+    , text >=1.2.3.1
+    , process
+    , directory
+    , filepath
+  default-language: Haskell2010
+
+executable KOAK-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_KOAK
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -XLambdaCase
+  build-depends:
+      KOAK
+    , base >=4.7 && <5
+    , bytestring >=0.10.8.2
+    , containers >=0.5.0.0
+    , llvm-hs >=5.0
+    , llvm-hs-pure >=5.0
+    , mtl >=2.2.2
+    , parsec >=3.1.13.0
+    , text >=1.2.3.1
+  default-language: Haskell2010
+
+test-suite KOAK-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_KOAK
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      KOAK
+    , QuickCheck
+    , base >=4.7 && <5
+    , bytestring >=0.10.8.2
+    , containers >=0.5.0.0
+    , hspec
+    , llvm-hs >=5.0
+    , llvm-hs-pure >=5.0
+    , mtl >=2.2.2
+    , parsec >=3.1.13.0
+    , text >=1.2.3.1
+  default-language: Haskell2010

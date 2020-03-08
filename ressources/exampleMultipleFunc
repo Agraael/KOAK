@@ -1,0 +1,2 @@
+def foo(x : double):double x + 1.0;
+def bar(x : double):double x + 3.0;

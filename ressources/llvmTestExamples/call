@@ -1,0 +1,2 @@
+def foo(x:double):double x + 1;
+foo(4);
